@@ -33,17 +33,20 @@ async function verifyFormInfo() {
     
         for(let i = 0; i < form.length - 1; i++) {
             const input = form[i];
+
             newUser[input.name] = input.value;
         }
         if(event.composedPath()[1].id === 'signIn') {
             const register = await UserRequests.register(newUser);
+
             if(register.message) ComponentsDom.createError(register);
             else createLoginForm();
         }
         else if(event.composedPath()[1].id === 'login') {
             const login = await UserRequests.login(newUser);
+
             if(login.message) ComponentsDom.createError(login);
-            else if(UserRequests.token) location.replace('./src/views/dashboard.html');
+            else location.replace('./src/views/dashboard.html');
         }
     }
 }
