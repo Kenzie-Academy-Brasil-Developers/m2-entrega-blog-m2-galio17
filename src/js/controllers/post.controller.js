@@ -16,23 +16,22 @@ export default class PostRequests extends Requests {
     }
 
     static async createPost(postData) {
-        await fetch(this.baseUrl, this.options('POST', postData))
+        return await fetch(this.baseUrl, this.options('POST', postData))
         .then((response) => response.json())
         .then((response) => console.log(response))
         .catch((error) => console.log(error));
     }
 
     static async editPost(postId, editData) {
-        await fetch(`${this.baseUrl}/${postId}`, this.options('PATCH', editData))
+        return await fetch(`${this.baseUrl}/${postId}`, this.options('PATCH', editData))
         .then((response) => response.json())
         .then((response) => console.log(response))
         .catch((error) => console.log(error));
     }
 
     static async deletePost(postId) {
-        await fetch(`${this.baseUrl}/${postId}`, this.options('DELETE'))
+        return await fetch(`${this.baseUrl}/${postId}`, this.options('DELETE'))
         .then((response) => response.json())
-        .then((response) => console.log(response))
         .catch((error) => console.log(error));
     }
 }
