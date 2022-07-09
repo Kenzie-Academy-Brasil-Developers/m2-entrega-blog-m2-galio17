@@ -6,7 +6,7 @@ export default class UserRequests extends Requests {
     static async register(registerData) {
         return await fetch(`${this.baseUrl}/register`, this.options('POST', registerData))
         .then((response) => response.json())
-        .catch((error) => console.log(error));
+        .catch((error) => console.error(error));
     }
 
     static async login(loginData) {
@@ -17,11 +17,12 @@ export default class UserRequests extends Requests {
             localStorage.setItem('@kenzie-blog:userId', JSON.stringify(response.userId));
             return response;
         })
-        .catch((error) => console.log(error));
+        .catch((error) => console.error(error));
     }
 
-    static async getUserById() {
-        return await fetch(`${this.baseUrl}`, this.options('GET'))
-        .catch((error) => console.log(error))
+    static async getUserById(userId) {
+        return await fetch(`${this.baseUrl}/${userId}`, this.options('GET'))
+        .then((response) => response.json())
+        .catch((error) => console.error(error))
     }
 }
