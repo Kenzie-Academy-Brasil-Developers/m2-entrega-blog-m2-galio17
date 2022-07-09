@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer type="module" src="../js/scripts/dashboard.js"></script>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <title>Kenzie Blog</title>
 </head>
 <body>
     <header>
-        <div class="user">
-            <figure class="user__figure">
-                <img src="#" alt="avatar" class="user__img">
+        <div class="user user--header">
+            <figure class="user__figure user__figure">
+                <img src="#" alt="avatar" class="user__img user__img">
             </figure>
             <h3 class="user__name">Giuseppe</h3>
         </div>
@@ -19,7 +22,7 @@
     <main>
         <section class="newPostContainer">
             <textarea name="newPost" id="newPost" placeholder="Como está se sentindo?"></textarea>
-            <button class="button button--add"></button>
+            <button type="submit" class="button button--add"></button>
         </section>
         <section class="postContainer">
             <section class="postContainer__post post">
@@ -29,7 +32,7 @@
                     </figure>
                     <h3 class="user__name">Giuseppe</h3>
                 </section>
-                <textarea name="post" id="1" class="post__text" disabled>34</textarea>
+                <textarea name="post" class="post__text" disabled>34</textarea>
                 <section class="post__info">
                     <details class="post__menu">
                         <summary></summary>
