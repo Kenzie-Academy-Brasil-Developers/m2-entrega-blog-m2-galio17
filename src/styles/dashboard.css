@@ -1,0 +1,134 @@
+header {
+    background-color: var(--color-primary);
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user--header {
+    display: flex;
+    align-items: center;
+    gap: .3125rem;
+}
+
+.user .user__figure {
+    background-color: var(--white);
+    border-radius: 50%;
+    width: 3.75rem;
+    height: 3.75rem;
+    overflow: hidden;
+}
+
+.user .user__img {
+    min-width: 100%;
+    max-height: 100%;
+}
+
+.button--logout {
+    width: 5rem;
+    height: 1.875rem;
+}
+
+main {
+    margin: 0 auto;
+    max-width: 43.75rem;
+}
+
+.newPostContainer {
+    margin: 50px 0px;
+    padding: 0px 5px;
+    display: flex;
+    align-items: stretch;
+    gap: 5px;
+}
+
+.newPostContainer textarea {
+    padding: 5px;
+    flex: 1;
+}
+
+.button--add, .button--edit, .button--delete, .button--save, .button--cancel {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+}
+
+.button--add {
+    background-image: url(../assets/img/enviar-correio.png);
+    width: 30px;
+}
+
+.button--edit {
+    background-image: url(../assets/img/escreva.png);
+}
+
+.button--delete {
+    background-image: url(../assets/img/cesto-de-lixo.png);
+    background-size: contain;
+}
+
+.button--save {
+    background-image: url(../assets/img/enviar-correio.png);
+}
+
+.button--cancel {
+    background-image: url(../assets/img/botao-de-deletar.png);
+    background-size: 20px;
+}
+
+.postContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.post {
+    border-top: 1px solid var(--black);
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 5px;
+}
+
+.post__text {
+    flex: 1;
+    min-height: 7.5625rem;
+    height: 100%;
+}
+
+.post textarea {
+    border-radius: 5px;
+    padding: 3px;
+    width: 100%;
+    height: inherit;
+    resize: none;
+}
+
+.post textarea:enabled {
+    border: 1px solid var(--color-primary);
+}
+
+.post__menu {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+}
+
+.post__menu summary {
+    transition: 100ms;
+    background-color: var(--color-secondary);
+    background-image: url(../assets/img/menu-aberto.png);
+    list-style: none;    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.post__menu .button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
