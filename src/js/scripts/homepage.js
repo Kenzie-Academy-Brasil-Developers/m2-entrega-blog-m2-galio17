@@ -59,7 +59,9 @@ addEventListener('click', (event) => {
         createLoginForm();
     } 
     else if(verifyClass('button--close')) {
-        document.body.removeChild(event.composedPath()[1]);
+        const modalError = document.querySelector('.modal--error');
+        if(modalError) ComponentsDom.body.removeChild(modalError)
+        ComponentsDom.body.removeChild(event.composedPath()[2]);
     }
     
     verifyFormInfo();

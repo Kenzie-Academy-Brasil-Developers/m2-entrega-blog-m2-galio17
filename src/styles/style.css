@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600&display=swap');
+
+:root{
+    --font-Raj: 'Rajdhani', sans-serif;
+    --color-primary: #6495ED;
+    --color-secondary: #EDBC64;
+    --red: #d12f1a;
+    --white: #F3F3F3;
+    --black: #10141f;
+    --shadow: #10141fd2;
+    --title-1: 600 3rem var(--font-Raj);
+    --title-2: 600 2rem var(--font-Raj);
+    --title-3: 500 1.5rem var(--font-Raj);
+    --details: 300 1rem var(--font-Raj);
+}
+
+body {
+    background-color: var(--white);
+    min-height: 100vh;
+    font-family: var(--font-Raj);
+    color: var(--black);
+}
+
+h1 {
+    font: var(--title-1);
+}
+
+h2 {
+    font: var(--title-2);
+    color: var(--white);
+}
+
+h3 {
+    font: var(--title-3);
+    color: var(--color-secondary);
+}
+
+h4, span {
+    font: var(--details);
+}
+
+.button {
+    background-color: var(--color-secondary);
+    color: var(--white);
+    padding: 3px;
+    border-radius: .3125rem;
+}
+
+.modal {
+    background-color: var(--shadow);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+
+.modal__out {
+    width: 90%;
+    max-width: 31.25rem;
+    min-height: 18.75rem;
+    height: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.modal__inner {
+    background-color: var(--color-primary);
+    border-radius: 5px;
+    border-top: 30px solid var(--white);
+    border-bottom: 10px solid var(--white);
+    padding: 2px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.button--close {
+    background-image: url(../assets/img/botao-fechar.png);
+    background-repeat: no-repeat;
+    background-position: 60% center;
+    background-size: 20px;
+    margin: 3px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+}
+
+.modal--error {
+    background-color: transparent;
+    margin: 3px;
+    width: 90%;
+    max-width: 31.25rem;
+    height: max-content;
+    bottom: 0px;
+    right: 0px;
+}
+
+.modal--error .modal__out {
+    width: 100%;
+    height: 3rem;
+    min-height: initial;
+    align-items: center;
+}
+
+.modal--error .modal__inner {
+    background-color: var(--white);
+    border: none;
+    border-left: 5px solid var(--red);
+    border-radius: initial;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.modal--error h4 {
+    width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.modal--error .button--close {
+    background-color: var(--red);
+}

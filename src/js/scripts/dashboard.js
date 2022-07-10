@@ -14,9 +14,10 @@ function verifyClass(className) {
 addEventListener('click', async (event) => {
     if(verifyClass('button')) {
         const post = event.composedPath()[3];
-        const postText = post.querySelector('.post__text');
+        console.log(post)
+        const postText = post.querySelector('textarea');
 
-        if(verifyClass('button--close')) document.body.removeChild(event.composedPath()[1]);
+        if(verifyClass('button--close')) document.body.removeChild(event.composedPath()[2]);
         else if(verifyClass('button--add')) {
             const postText = document.getElementById('newPost');
             const newPost = await PostRequests.createPost(postText.value);
@@ -64,5 +65,4 @@ addEventListener('click', async (event) => {
             location.replace('../../index.html')
         }
     }
-    console.log(event.composedPath())
 })

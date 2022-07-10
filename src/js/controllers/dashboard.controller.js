@@ -31,7 +31,8 @@ export default class ComponentsDom extends Dom {
 
     static createPost(userId, postData) {
         const post = document.createElement('section');
-        const postText = document.createElement('textarea');
+        const postText = document.createElement('textareadiv');
+        const postTextArea = document.createElement('textarea');
         const postInfo = document.createElement('section');
 
         post.id = postData.id;
@@ -55,8 +56,13 @@ export default class ComponentsDom extends Dom {
             `);
         }
         
-        postText.disabled = 'disabled';
-        postText.innerText = postData.content
+        postTextArea.disabled = 'disabled';
+        postTextArea.value = postData.content
+        
+        postText.append(postTextArea);
+        postText.insertAdjacentHTML('afterbegin', `
+            <h3 class="user__name">${postData.user.username}</h3>
+        `);
         
         post.append(postText, postInfo);
         post.insertAdjacentHTML('afterbegin', `
@@ -64,7 +70,6 @@ export default class ComponentsDom extends Dom {
                 <figure class="user__figure">
                     <img src="${postData.user.avatarUrl}" alt="avatar" class="user__img">
                 </figure>
-                <h3 class="user__name">${postData.user.username}</h3>
             </section>
         `);
 
